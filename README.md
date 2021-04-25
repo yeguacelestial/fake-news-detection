@@ -27,7 +27,7 @@ This is a Machine Learning oriented project. The following flowchart shows the e
 
 ## Action items
 
-- [ ] Create correct prompts, and store results on the database if the user is satisifed.
+- [x] Create correct prompts, and store results on the database if the user is satisifed.
 - [ ] Write unit tests.
 - [ ] Train model with mexican news (true and fake)
 - [ ] Make a decent front-end
