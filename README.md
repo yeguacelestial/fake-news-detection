@@ -28,8 +28,8 @@ This is a Machine Learning oriented project. The following flowchart shows the e
 ## Action items
 
 - [x] Create correct prompts, and store results on the database if the user is satisifed.
-- [ ] Write unit tests.
-- [ ] Train model with mexican news (true and fake)
+- [x] Write unit tests.
+- [ ] Train model with mexican newpapers (true and fake)
 - [ ] Make a decent front-end
 - [ ] Launch on Heroku
 
