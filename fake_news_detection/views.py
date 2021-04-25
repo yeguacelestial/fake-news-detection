@@ -12,11 +12,14 @@ from fake_news_detection.forms import NewsArticleForm
 tfidf_vectorizer = joblib.load('vectorizer.sav')
 pac = joblib.load('model.sav')
 
+def base(request):
+	return render(request, 'base.html')
+
 
 def index(request):
 	if request.method == 'GET':
 		form = NewsArticleForm()
-		return render(request, 'index.html', {'form': form})
+		return render(request, 'fake_news_detection/index.html', {'form': form})
 
 
 def result(request):
@@ -33,7 +36,7 @@ def result(request):
 
 	request.session['results'] = context
 
-	return render(request, "result.html", context)
+	return render(request, "fake_news_detection/result.html", context)
 
 
 def satisfaction(request):
@@ -58,4 +61,4 @@ def satisfaction(request):
 		if form.is_valid():
 			NewsArticle.objects.create(newspaper=newspaper, category=category, news_text=news_text, label=label)
 
-	return render(request, "satisfaction.html", {'args_sent_by_user': args_sent_by_user})
+	return render(request, "fake_news_detection/satisfaction.html", {'args_sent_by_user': args_sent_by_user})
