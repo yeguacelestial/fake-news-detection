@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Satisfaction page</h1>
+
+  <h2>This is the satisfaction page.</h2>
+
+  {% if "user_choice" in args_sent_by_user %}
+    <p>Thank you. We'll store and process your results for better predictions.</p>
+
+  {% else %}
+    <p>Thank you. Come back soon.</p>
+  {% endif %}
+</body>
+</html>

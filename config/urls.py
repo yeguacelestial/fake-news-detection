@@ -20,5 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Local
-    path('fake-news-detection/', include('fake_news_detection.urls')),
+    path('', include('fake_news_detection.urls')),
 ]

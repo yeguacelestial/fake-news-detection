@@ -3,5 +3,6 @@ from fake_news_detection import views
 
 urlpatterns = [
     path('', views.index, name="home"),
-    path('result/', views.result, name="result")
+    path('result/', views.result, name="result"),
+    path('satisfaction/', views.satisfaction, name="satisfaction")
 ]

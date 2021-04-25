@@ -1,3 +1,6 @@
+{% load crispy_forms_tags %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +10,18 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>This is home</h1>
+  <h1>Fake News Detection (only works for english news)</h1>
 
-  <form action="{% url 'result' %}">
+  <form action="{% url 'result' %}" autocomplete="off">
     {% csrf_token %}
 
-    News text: <input type="text" required name="news_text"><br>
+    {{ form.newspaper|as_crispy_field }}
+    {{ form.category|as_crispy_field }}
+    {{ form.news_text|as_crispy_field }}
 
-    <input type="submit" name="" value="submit">
+    <button type="submit" method="post">
+      Submit
+    </button>
   </form>
 </body>
 </html>
