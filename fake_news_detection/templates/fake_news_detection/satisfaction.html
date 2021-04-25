@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+{% extends 'fake_news_detection/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block form %}
+{% endblock form %}
+
+{% block content %}
+
+  <center>
+    <h2>Thank you!</h2>
+  
+  {% if "user_choice" in args_sent_by_user %}
+    <p>We'll store and process your results for better predictions.</p>
+
+  {% else %}
+    <p>We won't save any data of yours.</p>
+  {% endif %}
+
+  <a class="waves-effect waves-light btn-large" href="{% url 'home' %}"><i class="material-icons left">science</i>Try again</a>
+
+  </center>
+
+  <br>
+  
+{% endblock content %}
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,4 +43,4 @@
     <p>Thank you. Come back soon.</p>
   {% endif %}
 </body>
-</html>
+</html> {% endcomment %}

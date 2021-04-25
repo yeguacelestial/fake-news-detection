@@ -3,38 +3,21 @@
 {% load static %}
 
 {% block form %}
-    <form action="" method="POST" style="{% static 'styles.css' %}">
+    <form method="" action="{% url 'result' %}" autocomplete="off" style="{% static 'styles.css' %}">
         {% csrf_token %}
 
         {{ form.newspaper|as_crispy_field }}
-        {{ form.category|as_crispy_field }}
-        {{ form.news_text|as_crispy_field }}
+        <br>
 
-        <button class="btn waves-effect waves-light" type="submit" name="action">FACT-CHECK
+        {{ form.category|as_crispy_field }}
+        <br>
+
+        {{ form.news_text|as_crispy_field }}
+        <br>
+
+        <button class="btn waves-effect waves-light btn" style="width: 100%;" type="submit" name="action">FACT-CHECK
             <i class="material-icons right">mood</i>
         </button>
     </form>
 
 {% endblock form %}
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Fake News Detection (only works for english news)</h1>
-
-  <form method="" action="{% url 'result' %}" autocomplete="off">
-    {% csrf_token %}
-
-    {{ form.as_p }}
-
-    <button type="submit">
-      Submit
-    </button>
-  </form>
-</body>
-</html> {% endcomment %}

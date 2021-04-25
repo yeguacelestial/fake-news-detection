@@ -1,24 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Results page</h1>
+{% extends 'fake_news_detection/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
 
-  <h2>We are classifying your news article as: {{ans}}</h2>
+{% block form %}
+{% endblock form %}
 
+{% block content %}
+
+  <center>
+  <h2>We believe that news article from {{form_params.newspaper}} could be potentially</h2>
+  
+  {% if ans == 'Real' %}
+    <strong style="font-size: 10rem; color: green;">{{ans}}</strong>
+
+  {% else %}
+    <strong style="font-size: 10rem; color: red;">{{ans}}</strong>
+  
+  {% endif %}
+  
+  </center>
+  
   <p>Check the next checkbox if you're happy with your results.</p>
 
   <form action="{% url 'satisfaction' %}">
     {% csrf_token %}
 
-    <input type="checkbox" name="user_choice"> I'm satisified with the results.
-    <input type="submit" name="submit_button" value="submit">
+    <p>
+      <label>
+        <input type="checkbox" name="user_choice" />
+        <span>I think the prediction was accurate.</span>
+      </label>
+    </p>
+
+    <button class="btn waves-effect waves-light btn" style="width: 100%;" type="submit" name="submit_button">SUBMIT FEEDBACK
+        <i class="material-icons right">send</i>
+    </button>
   </form>
-  
-</body>
-</html>
+{% endblock content %}
