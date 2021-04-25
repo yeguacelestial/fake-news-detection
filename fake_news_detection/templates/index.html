@@ -15,9 +15,10 @@
   <form action="{% url 'result' %}" autocomplete="off">
     {% csrf_token %}
 
-    {{ form.newspaper|as_crispy_field }}
+    {% comment %} {{ form.newspaper|as_crispy_field }}
     {{ form.category|as_crispy_field }}
-    {{ form.news_text|as_crispy_field }}
+    {{ form.news_text|as_crispy_field }} {% endcomment %}
+    {{ form.as_p }}
 
     <button type="submit" method="post">
       Submit

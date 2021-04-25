@@ -17,8 +17,11 @@
     {% csrf_token %}
 
     <input type="checkbox" name="user_choice"> I'm satisified with the results.
-    <input type="submit" name="" value="submit">
+    <input type="submit" name="submit_button" value="submit">
   </form>
+
+  <h3>Form params: </h3>
+  <p>{{ form_params }}<p>
 
 </body>
 </html>
