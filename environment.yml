@@ -23,6 +23,7 @@ dependencies:
   - pip:
     - asgiref==3.3.4
     - django==3.2
+    - django-crispy-forms==1.11.2
     - joblib==1.0.1
     - numpy==1.20.2
     - python-dotenv==0.17.0
