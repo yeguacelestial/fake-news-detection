@@ -14,8 +14,6 @@ pac = joblib.load('model.sav')
 
 
 def index(request):
-	news_article_model = NewsArticle()
-
 	if request.method == 'GET':
 		form = NewsArticleForm()
 		return render(request, 'index.html', {'form': form})

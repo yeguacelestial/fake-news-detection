@@ -12,15 +12,12 @@
 <body>
   <h1>Fake News Detection (only works for english news)</h1>
 
-  <form action="{% url 'result' %}" autocomplete="off">
+  <form method="" action="{% url 'result' %}" autocomplete="off">
     {% csrf_token %}
 
-    {% comment %} {{ form.newspaper|as_crispy_field }}
-    {{ form.category|as_crispy_field }}
-    {{ form.news_text|as_crispy_field }} {% endcomment %}
     {{ form.as_p }}
 
-    <button type="submit" method="post">
+    <button type="submit">
       Submit
     </button>
   </form>
