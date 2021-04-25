@@ -1,0 +1,68 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>Fake News Detection</title>
+    </head>
+
+    <body style="background-color: #c94c4c;">
+        <nav>
+            <div class="container nav-wrapper">
+                <a href="/" class="brand-logo">Fake News Detection</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1 style="text-align: center;">The fake news detector you didn't know you needed.</h1>
+            
+            <div class="row">
+                <div class="col s4"> <!--s4 is the size of the column-->
+                    <!-- Promo content 1 goes here -->
+                    <div class="center">
+                        <i class="large material-icons" style="color: #ee6e73">sick</i>
+                        <p>Is the dis(information) age making you sick?</p>
+                        <p class="light center">Don't fret, and cure your illness with this brand-new detector.</p>
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    <!--Promo content 2 goes here-->
+                    <div class="center">
+                        <i class="large material-icons" style="color: green">fact_check</i>
+                        <p>Fact-check the news you read every day.</p>
+                        <p class="light center">Just copy the text you want to try out, and paste it below.</p>
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    <!--Promo content 3 goes here-->
+                    <div class="center">
+                        <i class="large material-icons" style="color: #fa9905">sentiment_very_satisfied</i>
+                        <p>A Machine Learning approach.</p>
+                        <p class="light center">The more you use the platform, the better it becomes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="search" placeholder="Paste the news text you want to fact-check here.">
+                <button class="btn waves-effect waves-light" type="submit" name="action">FACT-CHECK
+                    <i class="material-icons right">mood</i>
+                </button>
+            </form>
+            
+            <!--Inheritance of the full code-->
+            {% block content %}
+            {% endblock content %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        </div>
+
+    </body>
+</html>
