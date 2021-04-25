@@ -42,6 +42,10 @@ If you manage Anaconda/Miniconda environments on your local system, you can buil
 
 `conda env create -f environment.yml`
 
-If you don't use Anaconda and you prefer using another environment wrapper, install the project dependencies with:
+If you don't use Anaconda and you rather using another environment wrapper, install the project dependencies with:
 
 `pip install -r requirements.txt`
+
+Then, run the server locally
+
+`python manage.py runserver`
