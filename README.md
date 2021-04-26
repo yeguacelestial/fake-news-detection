@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+    <a href="https://fakenews-platform.herokuapp.com/">https://fakenews-platform.herokuapp.com/</strong>
+</p>
+
+<p align="center">
     <img src="https://img.shields.io/github/workflow/status/yeguacelestial/fake-news-detection/tests?style=for-the-badge" alt="build status"/>
 </p>
 
@@ -30,7 +34,7 @@ This is a Machine Learning oriented project. The following flowchart shows the e
 - [x] Create correct prompts, and store results on the database if the user is satisifed.
 - [x] Write unit tests.
 - [x] Make a decent front-end
-- [ ] Launch on Heroku
+- [x] Launch on Heroku
 - [ ] Train model with mexican newpapers (true and fake)
 
 

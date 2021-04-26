@@ -22,6 +22,7 @@ dependencies:
   - zlib=1.2.11=h7b6447c_3
   - pip:
     - asgiref==3.3.4
+    - dj-database-url==0.5.0
     - django==3.2
     - django-crispy-forms==1.11.2
     - gunicorn==20.1.0
