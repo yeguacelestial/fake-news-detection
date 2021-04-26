@@ -9,7 +9,7 @@ class NewsArticleForm(forms.ModelForm):
         # fields = '__all__'
         fields = ('newspaper', 'category', 'news_text', )
         labels = {
-            'newspaper': 'Write down the newspaper of the article:',
+            'newspaper': 'Write down the name of the newspaper (Example: CNN):',
             'category': 'Select the category of the news article',
             'news_text': "Write down the text you want to predict whether it's fake or not."
         }
