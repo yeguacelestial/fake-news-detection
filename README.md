@@ -35,7 +35,6 @@ This is a Machine Learning oriented project. The following flowchart shows the e
 - [x] Write unit tests.
 - [x] Make a decent front-end
 - [x] Launch on Heroku
-- [ ] Train model with mexican newpapers (true and fake)
 
 
 ## Running locally
