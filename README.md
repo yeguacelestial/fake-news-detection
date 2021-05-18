@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    <a href="https://fakenews-platform.herokuapp.com/">https://fakenews-platform.herokuapp.com/</strong>
+    <a href="https://fakenews-platform.herokuapp.com/">https://fakenews-platform.herokuapp.com/</a>
 </p>
 
 <p align="center">
@@ -28,13 +28,14 @@ This is a Machine Learning oriented project. The following flowchart shows the e
     <img src="flowchart.png" alt="flowchart"/>
 </p>
 
+## Datasets
 
-## Action items
+For training and testing of the model, the following Kaggle datasets were used:
 
-- [x] Create correct prompts, and store results on the database if the user is satisifed.
-- [x] Write unit tests.
-- [x] Make a decent front-end
-- [x] Launch on Heroku
+- ['Fake News' InClass Prediction Competition](https://www.kaggle.com/c/fake-news/data)
+
+- ['Fake and real news dataset' by Clément Bisaillon](https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset)
+
 
 
 ## Running locally
