@@ -15,11 +15,6 @@ class NewsArticleForm(forms.ModelForm):
         }
         widgets = {
             'news_text': forms.Textarea(
-                attrs={
-                    'rows': 5, 
-                    'cols': 20, 
-                    'style': 'resize: none; display: block;',
-                }
             )
         }
 

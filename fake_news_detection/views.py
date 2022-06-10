@@ -1,6 +1,7 @@
 import joblib
 
 from django.shortcuts import render
+from django.http import JsonResponse
 from django.http import HttpResponse
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -20,6 +21,21 @@ def index(request):
 	if request.method == 'GET':
 		form = NewsArticleForm()
 		return render(request, 'fake_news_detection/index.html', {'form': form})
+
+def a(request):
+	form = NewsArticleForm()
+	if request.is_ajax and request.method == "POST":
+		newspaper = request.POST.get("newspaper")
+		category = request.POST.get("category")
+		news_text = request.POST.get("news_text")
+		vec_news_text = tfidf_vectorizer.transform([news_text])
+		ans = pac.predict(vec_news_text)
+		print(ans)
+
+		return JsonResponse({"prediction": ans[0]}, status=200)
+
+
+	return render(request, 'fake_news_detection/a.html', {'form': form})
 
 
 def result(request):

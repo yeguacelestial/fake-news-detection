@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block form %}
-    <form method="" action="{% url 'result' %}" autocomplete="off" style="{% static 'styles.css' %}">
+    <form method="" action="{% url 'fake_news_detection:result' %}" autocomplete="off" style="{% static 'styles.css' %}">
         {% csrf_token %}
 
         {{ form.newspaper|as_crispy_field }}

@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Fake News Detection</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="{% static 'fake_news_detection/img/favicon.png' %}" rel="icon"> -->
+  <!-- <link href="{% static 'fake_news_detection/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'fake_news_detection/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'fake_news_detection/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'fake_news_detection/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'fake_news_detection/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'fake_news_detection/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'fake_news_detection/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{% static 'fake_news_detection/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="{% url 'fake_news_detection:home' %}">Fake News Detection</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Fake news detector</a></li>
+          <li><a class="getstarted scrollto" href=""><i class="bi bi-github"></i> &nbsp;&nbsp; Github</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+
+        <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="{% static 'fake_news_detection/img/details-1.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-4" data-aos="fade-up">
+            <h3>The fake news detector you didn't know you needed.</h3>
+            <p class="fst-italic">
+              Fake news has become a critical issue that is affecting the world and it has led to loss of lives, reputation and much more. You need a reliable fake news detector that can detect fake news right in the moment it is published or beginning of distribution.
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> A Machine Learning based approach.</li>
+              <li><i class="bi bi-check"></i> Training dataset with over 20,000 news articles.</li>
+              <li><i class="bi bi-check"></i> De-clutter your mind from fake negative news.</li>
+            </ul>
+            <p>
+              Journalists that don't know how to detect fake news on social media sites like Facebook and Twitter, risk losing their audience and credibility. Help them fight fake news with the Fake News Detection Tool!
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Fake news detector</h2>
+          <p>Fill in the details below to predict if an article contains Fake News</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <form action="" method="" role="form" class="php-email-form" data-aos="fade-up">
+              {% csrf_token %}
+              <div class="form-group">
+                <input placeholder="Name of the newspaper. (Ex. cnn, etc)" type="text" name="newspaper" class="form-control" id="newspaper" required>
+              </div>
+
+              <div class="form-group mt-3">
+                <select class="form-select" name="category" aria-label="Default select example">
+                  <option value="Business" selected>Business</option>
+                  <option value="Cars">Cars</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Family">Family</option>
+                  <option value="Health">Health</option>
+                  <option value="Politics">Politics</option>
+                  <option value="Religion">Religion</option>
+                  <option value="Science">Science</option>
+                  <option value="Sports">Sports</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Travel">Travel</option>
+                  <option value="Video">Video</option>
+                  <option value="World">World</option>
+                </select>
+              </div>
+              <div class="form-group mt-3">
+                <textarea placeholder="News article text" class="form-control" name="news_text" rows="5" required></textarea>
+              </div>
+              <div class="text-center submit-btn"><button type="submit">Fact Check</button></div>
+            </form>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-lg-12 info result">
+                <div id="initial_text">
+                  <strong>Submit the article to predict results</strong>
+                </div>
+                <div id="submit_feedback" class="hide">
+                  <h1 id="ans"></h1>
+                  <div>
+                    <p>Satisfied with the result?</p>
+                    <div>
+                      <i id="up" class="pointer bx bx-like"></i> <i id="down" class="pointer bx bx-dislike"></i>
+                    </div>
+                  </div>
+                </div>
+                <div id="feedback" class="hide">
+                  <strong>Thanks for the feedback!</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; <strong><span>Fake News Detector</span></strong>.
+      </div>
+      <div class="credits">
+        Designed by <strong>&lt;Your name&gt;</strong>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'fake_news_detection/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'fake_news_detection/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'fake_news_detection/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'fake_news_detection/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'fake_news_detection/js/main.js' %}"></script>
+
+  <script>
+  $(".php-email-form").submit(function (e) {
+    e.preventDefault();
+    var serializedData = $(this).serialize();
+    console.log(serializedData);
+
+    $.ajax({
+        type: 'POST',
+        url: "{% url 'fake_news_detection:a' %}",
+        data: serializedData,
+        success: function (response) {
+            console.log(response);
+            $("#submit_feedback").removeClass("hide");
+            $("#initial_text").hide();
+            $("#ans").html(response['prediction']);
+        },
+        error: function (response) {
+            // alert the error if any error occured
+            console.log(response);
+        },
+    })
+  });
+
+  $("#up").click(function (e) {
+    e.preventDefault();
+    console.log(e);
+    $("#feedback").removeClass("hide");
+  });
+  </script>
+
+</body>
+
+</html>
